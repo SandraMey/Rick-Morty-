@@ -54,20 +54,24 @@ export const CharactersList = () => {
 
 
     return (
-        <div className="">
+        <div className="container  mx-auto px-4">
             <h1>Characters List</h1>
             <div>
                 <p>Total result : {infos && infos.count}</p>
                 <p>{currentPage} / { infos.pages}  </p>
             </div>
             <div>
-                <button type="button" onClick={() => filterCharacters()}>{charactersAlive ? 'Get Alive Characters' : 'Get All Characters'}</button>
+                <button 
+                className="bg-green-500 hover:bg-green-300 text-gray-800 font-bold p-3 border rounded-xl"
+                type="button" 
+                onClick={() => filterCharacters()}>{charactersAlive ? 'Get Alive Characters' : 'Get All Characters'}
+                </button>
             </div>
             <div>
                 <button type="button" onClick={() => infos.prev != null && getDataFromApi(currentPage -1)}>PREV</button>
                 <button type="button" onClick={() => infos.next != null && getDataFromApi(currentPage +1)}>NEXT</button>
             </div>
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4" >
                 {
                     characters ? 
                     characters.map(character => <CharacterCard key={character.id} character={character} />)
