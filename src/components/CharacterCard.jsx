@@ -11,6 +11,7 @@ export const CharacterCard = ({ character }) => {
         <div>
             <h1>{character.name}</h1>
             <img src={character.image} alt={character.name}/>
+            <p>{character.status}</p>
         </div>
     )
 }
