@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react'
 import axios from 'axios';
 import { CharacterCard } from './CharacterCard.jsx';
 
+
 export const CharactersList = () => {
 
     //state sur characters pour pouvoir le modifier // infos et currentpage pour setter 

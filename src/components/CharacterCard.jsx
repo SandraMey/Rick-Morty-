@@ -1,5 +1,5 @@
 import React from 'react'
-import { CharactersList } from './CharactersList';
+import { Link } from "react-router-dom";
 
 
 export const CharacterCard = ({ character }) => {
@@ -9,9 +9,11 @@ export const CharacterCard = ({ character }) => {
 
     return (
         <div>
+            
             <h1>{character.name}</h1>
             <img src={character.image} alt={character.name}/>
             <p>{character.status}</p>
+            <Link to={`/character/${character.id}`}>Go character</Link>
         </div>
     )
 }
